@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS animation</title>
+</head>
+<body>
+    <header>
+        <div class="description">
+            <p>blog.ngomafortuna</p>
+            <p>Constuindo e compartilhando <span>conhecimento</span>.</p>
+        </div>
+        <nav id="menu">
+            <ul class="margin">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="margin">
+        <h1>Contactos</h1>
+        <p>Animação de elementos HTML com CSS3</p>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+        </p>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            let menu = document.querySelector('#menu');
+
+            menu.classList.toggle('scroll', window.scrollY > 180)
+        });
+    </script>
+</body>
+</html>
