@@ -301,6 +301,10 @@ form p a:hover {
     margin-left: 5%;
 }
 
+.load button {
+    margin-right: 20px;
+}
+
 #load {
     display: block;
     width: 50px;
