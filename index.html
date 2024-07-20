@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-ao">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS animation</title>
+</head>
+<body>
+    <header>
+        <div class="description">
+            <p>blog.ngomafortuna</p>
+            <p>Constuindo e compartilhando <span>conhecimento</span>.</p>
+
+            <button class="btn-purp">Newsletter</button>
+        </div>
+        <nav>
+            <ul class="margin">
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="about.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="margin">
+            <h1>1. CSS animation</h1>
+            <p>Animação de elementos HTML com CSS3</p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+
+            <h2>1.1 Style</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+
+            <h3>1.1.1 Font style</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+
+            <h3>1.1.2 Color style</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+
+            <h2>1.2 Animation</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+
+            <h2>1.3 Resume</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo ut corporis temporibus molestias facilis quibusdam quisquam itaque tenetur, eligendi voluptates eaque cumque illum, nam voluptate at quas sit atque?
+            </p>
+        </article>
+    </main>
+
+    <div id="modal-promotion" class="modal-container">
+        <div class="modal">
+            <button class="close">x</button>
+            <h1>Cadastre-se na newsletter</h1>
+            <form action="" method="post">
+                <input type="email" name="email" id="email" placeholder="mailuser@domain"><br> 
+                <button type="submit">Cadatrar</button>
+            </form>
+        </div>
+    </div> <!-- /.modal-container -->
+
+    <script>
+        function startModal(modalID) {
+            if(localStorage.closeModal !== modalID) {
+                const modal = document.getElementById(modalID);
+                if(modal) {
+                    modal.classList.add('show');
+                    modal.addEventListener('click', (e) => {
+                        if(e.target.id==modalID || e.target.className=='close') {
+                            modal.classList.remove('show');
+                            // localStorage.closeModal = modalID;
+                        }
+                    });
+                }
+            }
+        }
+
+        // Chamar modal se clicar no botao newsletter
+        const showPop = document.querySelector('.btn-purp');
+        showPop.addEventListener('click', function() {
+            startModal('modal-promotion');
+        });
+
+        // Chamar modal se scrool for maior que 800
+        document.addEventListener('scroll', () => {
+            if(window.pageYOffset > 800) {
+                startModal('modal-promotion');
+            }
+        });
+    </script>
+</body>
+</html>
